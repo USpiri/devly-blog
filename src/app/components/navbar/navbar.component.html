@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<mat-toolbar class="navbar">
+  <div class="d-flex justify-content-between flex-row w-100">
+    <a class="text-decoration-none text-reset title" (click)="goTo('')"
+      ><span class="fs-4">Devly</span>
+      <span class="blog ms-1 fs-6">Blog</span></a
+    >
+    <div class="d-none d-md-flex gap-3 unselectable">
+      <span
+        class="nav-item"
+        (click)="goTo(link.route)"
+        *ngFor="let link of navbarItems"
+        >{{ link.label }}</span
+      >
+    </div>
+  </div>
+</mat-toolbar>
