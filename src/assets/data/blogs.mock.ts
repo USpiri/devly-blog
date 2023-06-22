@@ -2,6 +2,7 @@ import { Blog } from 'src/app/models/blog.interface';
 
 export const BLOGS: Blog[] = [
   {
+    _id: '1',
     title: 'Some Blog',
     author: 'Uriel Spiridione',
     createdAt: new Date(),
