@@ -24,7 +24,10 @@ export class BlogComponent {
         this.blog = entry;
         this.titleService.setTitle(entry.title);
       },
-      error: () => this.router.navigateByUrl('/404'),
+      error: () => {
+        this.router.navigateByUrl('404');
+        console.log('A');
+      },
     });
   }
 }

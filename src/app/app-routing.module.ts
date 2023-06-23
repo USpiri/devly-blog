@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: 'blog',
     loadChildren: () => import('./modules').then((m) => m.BlogModule),
   },
+  { path: '404', component: NotFoundComponent },
   { path: 'home', redirectTo: '' },
   { path: '**', redirectTo: '' },
 ];
