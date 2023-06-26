@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { User } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-blog-header',
@@ -9,4 +10,5 @@ export class BlogHeaderComponent {
   @Input() image!: string;
   @Input() title = '';
   @Input() date!: Date;
+  @Input() author!: User;
 }

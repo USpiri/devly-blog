@@ -7,14 +7,5 @@ import { Blog } from 'src/app/models/blog.interface';
   styleUrls: ['./blog-card.component.scss'],
 })
 export class BlogCardComponent {
-  @Input() blog: Blog = {
-    title: '',
-    author: '',
-    createdAt: new Date(),
-    image: '',
-    tags: [],
-    description: '',
-    content: '',
-    pages: [],
-  };
+  @Input() blog!: Blog;
 }

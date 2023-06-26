@@ -4,7 +4,10 @@ export const BLOGS: Blog[] = [
   {
     _id: '1',
     title: 'Some Blog',
-    author: 'Uriel Spiridione',
+    author: {
+      name: 'Uriel Spiridione',
+      image: 'https://picsum.photos/id/55/100/100',
+    },
     createdAt: new Date(),
     image: 'https://picsum.photos/id/43/740/300',
     tags: ['typescript'],

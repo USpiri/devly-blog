@@ -1,7 +1,9 @@
+import { User } from './user.interface';
+
 export interface Blog {
   _id?: string;
   title: string;
-  author: string;
+  author: User;
   createdAt: Date;
   image: string;
   tags: string[];
