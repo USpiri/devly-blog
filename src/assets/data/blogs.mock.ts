@@ -6,7 +6,7 @@ export const BLOGS: Blog[] = [
     title: 'Some Blog',
     author: 'Uriel Spiridione',
     createdAt: new Date(),
-    image: 'https://picsum.photos/id/43/300/200',
+    image: 'https://picsum.photos/id/43/740/300',
     tags: ['typescript'],
     description: 'This is some blog',
     content: `# Que es inject()?

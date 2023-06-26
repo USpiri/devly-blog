@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-blog-header',
   templateUrl: './blog-header.component.html',
-  styleUrls: ['./blog-header.component.scss']
+  styleUrls: ['./blog-header.component.scss'],
 })
 export class BlogHeaderComponent {
-
+  @Input() image = '';
+  @Input() title = '';
 }
