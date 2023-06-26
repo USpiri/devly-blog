@@ -1,10 +1,12 @@
 <div class="d-flex align-items-center justify-content-center w-100">
   <div class="blog-container">
-    <div class="entry-container">
-      <app-blog-entry></app-blog-entry>
-    </div>
-    <div class="scroller-container">
-      <app-blog-scroller class="w-100"></app-blog-scroller>
+    <div class="d-flex flex-row">
+      <div class="entry-container">
+        <app-blog-entry [blog]="blog" class="entry"></app-blog-entry>
+      </div>
+      <div class="scroller-container">
+        <app-blog-scroller class="w-100"></app-blog-scroller>
+      </div>
     </div>
   </div>
 </div>
