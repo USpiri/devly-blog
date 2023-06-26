@@ -6,7 +6,7 @@ export const BLOGS: Blog[] = [
     title: 'Some Blog',
     author: {
       name: 'Uriel Spiridione',
-      image: 'https://picsum.photos/id/55/100/100',
+      image: 'https://picsum.photos/id/669/100/100',
     },
     createdAt: new Date(),
     image: 'https://picsum.photos/id/43/740/300',
