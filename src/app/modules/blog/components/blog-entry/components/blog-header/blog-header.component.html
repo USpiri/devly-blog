@@ -1,4 +1,5 @@
-<div class="image-container mb-3">
+<div class="image-container mb-3" *ngIf="image">
   <img [src]="image" alt="Blog image" />
 </div>
-<h1>{{ title }}</h1>
+<h1 class="mb-0">{{ title }}</h1>
+<span class="blog-date">{{ date | date }}</span>

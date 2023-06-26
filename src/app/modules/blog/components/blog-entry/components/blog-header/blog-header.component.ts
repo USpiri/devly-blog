@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./blog-header.component.scss'],
 })
 export class BlogHeaderComponent {
-  @Input() image = '';
+  @Input() image!: string;
   @Input() title = '';
+  @Input() date!: Date;
 }
