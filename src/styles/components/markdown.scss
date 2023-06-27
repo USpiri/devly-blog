@@ -27,8 +27,12 @@
     line-height: 1.5;
   }
 
+  code {
+    color: #d4d4d4;
+  }
+
   code:not([class*="language-"]) {
-    background: #202020;
+    background: var(--background);
     border-radius: 3px;
     font-size: 0.94em;
     padding: 0px 6px 2px;
@@ -146,6 +150,9 @@
     p {
       margin-top: unset;
       margin-bottom: unset;
+    }
+    code:not([class*="language-"]) {
+      background: var(--bg-lighter-5);
     }
   }
 }
