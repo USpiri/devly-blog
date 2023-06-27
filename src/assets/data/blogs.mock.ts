@@ -18,13 +18,13 @@ export const BLOGS: Blog[] = [
 A partir de la versión 14 de Angular, se puso a disposición una función llamada "inject()". Esta toma un InjectionToken como parámetro y devuelve el valor de ese InjectionToken. Básicamente, es otra forma de obtener una dependencia que no sea usar la inyección del constructor. Aquí hay un ejemplo.
 
 \`\`\`typescript
-export class MyComponent {
-  constructor(private http:HttpService) { }
-}
+  export class MyComponent {
+    constructor(private http:HttpService) { }
+  }
 
-export class MyComponentInjectable {
-  private http = inject(HttpService);
-}
+  export class MyComponentInjectable {
+    private http = inject(HttpService);
+  }
 \`\`\`
 
 
