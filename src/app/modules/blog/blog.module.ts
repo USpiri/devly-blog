@@ -9,6 +9,7 @@ import {
   BlogHeaderComponent,
   BlogContentComponent,
 } from './components';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {
   imports: [
     CommonModule,
     BlogRoutingModule,
+    MaterialModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
