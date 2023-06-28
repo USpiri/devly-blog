@@ -1,1 +1,17 @@
-<p>blog-scroller works!</p>
+<ul #scrollspyNav class="scrollspy-nav m-0">
+  <li
+    *ngFor="let heading of headings"
+    [class.active]="heading[1] === activeHeadingId"
+  >
+    <a [routerLink]="['.']" [fragment]="heading[1]">{{ heading[0] }}</a>
+  </li>
+</ul>
+<button
+  class="scrollup-button ms-2 mt-3"
+  mat-mini-fab
+  color="primary"
+  (click)="onScrollUp()"
+  *ngIf="showScrollUpButton"
+>
+  <mat-icon>arrow_upward</mat-icon>
+</button>
