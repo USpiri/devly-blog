@@ -8,7 +8,7 @@ import { MarkdownService } from 'ngx-markdown';
 })
 export class BlogContentComponent implements OnInit {
   @Input() content = '';
-
+  processedContent = '';
   markdownService = inject(MarkdownService);
 
   ngOnInit() {
@@ -21,20 +21,75 @@ export class BlogContentComponent implements OnInit {
                 </a>${text}
               </h${headerLevel}>`;
     };
+    this.processedContent = this.processContent(this.content);
   }
 
   processContent(content: string) {
-    const regex = /\[info\]([\s\S]*?)\[\/info\]/g;
+    const regex = /\[(\w+)](?:\n*(.*?)\s*\n)?([\s\S]*?)\[\/\1]/g;
+    const componentConfig = CUSTOM_COMPONENT_CONFIG;
 
-    return content.replace(/\n/g, '  \n').replace(regex, (match, content) => {
-      const renderedHtml = this.markdownService.parse(content);
-      return `<div class="info d-flex flex-column p-3 px-4">
-                <div class='mb-2 header'>
-                  <i class="fa-solid fa-info me-2"></i>
-                  Info
-                </div>
-                <div>${renderedHtml}</div>
-              </div>`;
-    });
+    return content
+      .replace(/\n/g, '  \n')
+      .replace(regex, (match, componentType, title, content) => {
+        componentType = componentType.toLowerCase();
+        const config = componentConfig[componentType];
+        if (config) {
+          const renderedHtml = this.markdownService.parse(content);
+          const componentTitle = title ? title.trim() : config.title;
+          return `<div class="${componentType} callout d-flex flex-column p-3 px-4">
+                      <div class='${
+                        renderedHtml.length > 0 ? 'mb-2' : ''
+                      } header'>
+                        <i class="${config.icon} me-2"></i>
+                        ${componentTitle}
+                      </div>
+                      <div>${renderedHtml}</div>
+                    </div>`;
+        } else {
+          return match;
+        }
+      });
   }
 }
+
+interface ComponentConfig {
+  [key: string]: {
+    icon: string;
+    title: string;
+  };
+}
+
+const CUSTOM_COMPONENT_CONFIG: ComponentConfig = {
+  info: {
+    icon: 'fa-solid fa-info',
+    title: 'Info',
+  },
+  note: {
+    icon: 'fa-solid fa-sticky-note',
+    title: 'Note',
+  },
+  success: {
+    icon: 'fa-solid fa-check',
+    title: 'Success',
+  },
+  question: {
+    icon: 'fa-solid fa-question',
+    title: 'Question',
+  },
+  warning: {
+    icon: 'fa-solid fa-exclamation-triangle',
+    title: 'Warning',
+  },
+  error: {
+    icon: 'fa-solid fa-xmark',
+    title: 'Error',
+  },
+  example: {
+    icon: 'fa-solid fa-list-ul',
+    title: 'Example',
+  },
+  quote: {
+    icon: 'fa-solid fa-quote-left',
+    title: 'Quote',
+  },
+};

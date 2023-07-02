@@ -30,9 +30,9 @@ A partir de la versión 14 de Angular, se puso a disposición una función llama
 
 # Ejemplo de Markdown con componente personalizado
 ¡Hola! Este es un ejemplo de Markdown que utiliza un componente personalizado en Angular.
-[info]
+[error] Hola
 Este es un mensaje de información que será renderizado dentro del componente personalizado \`InfoComponent\`.
-[/info]
+[/error]
 
 ## Otro contenido
 
@@ -78,6 +78,22 @@ hr
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+[info]
+[/info]
+[note]
+[/note]
+[success]
+[/success]
+[question]
+[/question]
+[warning]
+[/warning]
+[error]
+[/error]
+[example]
+[/example]
+[quote]
+[/quote]
     `,
     pages: [],
   },

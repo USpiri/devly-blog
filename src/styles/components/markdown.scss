@@ -127,13 +127,10 @@
     margin-block-end: 0.83em;
   }
 
-  .info {
-    background-color: #027aff1a;
-    // border: 1px solid red;
+  .callout {
     border-radius: 5px;
     margin: 1.5rem 0;
     .header {
-      color: #027aff;
       font-weight: 600;
     }
     h1,
@@ -154,5 +151,54 @@
     code:not([class*="language-"]) {
       background: var(--bg-lighter-5);
     }
+  }
+
+  .info {
+    .header {
+      color: #027aff;
+    }
+    background-color: #027aff1a;
+  }
+  .error {
+    .header {
+      color: #fb464c;
+    }
+    background-color: #fb464c1a;
+  }
+  .warning {
+    .header {
+      color: #e9973f;
+    }
+    background-color: #e9973f1a;
+  }
+  .question {
+    .header {
+      color: #e0de71;
+    }
+    background-color: #e0de711a;
+  }
+  .success {
+    .header {
+      color: #44cf6e;
+    }
+    background-color: #44cf6e1a;
+  }
+  .note {
+    .header {
+      color: #a882ff;
+    }
+    background-color: #a882ff1a;
+  }
+  .example {
+    .header {
+      color: #f3eae8;
+    }
+    background-color: #f3eae81a;
+  }
+  .quote {
+    .header {
+      color: #1683a0;
+    }
+    background-color: #1683a01a;
   }
 }
