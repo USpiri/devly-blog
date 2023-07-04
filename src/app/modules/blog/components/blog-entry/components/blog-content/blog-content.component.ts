@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { MarkdownService } from 'ngx-markdown';
+import { CUSTOM_CALLOUT_CONFIG } from 'src/app/models/markdown.interface';
 
 @Component({
   selector: 'app-blog-content',
@@ -26,7 +27,7 @@ export class BlogContentComponent implements OnInit {
 
   processContent(content: string) {
     const regex = /\[(\w+)](?:\n*(.*?)\s*\n)?([\s\S]*?)\[\/\1]/g;
-    const componentConfig = CUSTOM_COMPONENT_CONFIG;
+    const componentConfig = CUSTOM_CALLOUT_CONFIG;
 
     return content
       .replace(/\n/g, '  \n')
@@ -51,45 +52,3 @@ export class BlogContentComponent implements OnInit {
       });
   }
 }
-
-interface ComponentConfig {
-  [key: string]: {
-    icon: string;
-    title: string;
-  };
-}
-
-const CUSTOM_COMPONENT_CONFIG: ComponentConfig = {
-  info: {
-    icon: 'fa-solid fa-info',
-    title: 'Info',
-  },
-  note: {
-    icon: 'fa-solid fa-sticky-note',
-    title: 'Note',
-  },
-  success: {
-    icon: 'fa-solid fa-check',
-    title: 'Success',
-  },
-  question: {
-    icon: 'fa-solid fa-question',
-    title: 'Question',
-  },
-  warning: {
-    icon: 'fa-solid fa-exclamation-triangle',
-    title: 'Warning',
-  },
-  error: {
-    icon: 'fa-solid fa-xmark',
-    title: 'Error',
-  },
-  example: {
-    icon: 'fa-solid fa-list-ul',
-    title: 'Example',
-  },
-  quote: {
-    icon: 'fa-solid fa-quote-left',
-    title: 'Quote',
-  },
-};
