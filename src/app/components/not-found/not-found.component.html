@@ -1,13 +1,17 @@
 <section class="d-flex align-items-center justify-content-center not-found">
   <div class="">
-    <mat-card class="p-3">
-      <mat-card-content>
-        <h1 class="mb-3">Ooops.. 404!</h1>
+    <mat-card class="p-4">
+      <h1 class="mb-3">Ooops.. 404!</h1>
+      <div class="d-flex flex-row gap-3 align-items-center">
+        <div class="code-loader">
+          <span class="me-2">{{ "{" }}</span
+          ><span>{{ "}" }}</span>
+        </div>
         <div class="text">
           <p class="text">Looks like you are lost...</p>
           <p>Let us redirect you to the <a href="/">home page</a></p>
         </div>
-      </mat-card-content>
+      </div>
     </mat-card>
   </div>
 </section>
