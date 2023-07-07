@@ -9,12 +9,25 @@
     border-radius: 5px;
   }
 }
+.option-button {
+  min-width: unset;
+  padding: 0;
+  height: unset;
+}
+.option-icon {
+  height: unset;
+  color: var(--bg-lighter-30);
+  cursor: pointer;
+}
 .blog-date {
   color: var(--bg-lighter-30);
   font-weight: 500;
 }
 .author-container {
+  border-radius: 5px;
+  padding: 0 8px 0 8px;
   cursor: pointer;
+  transition: all 0.08s;
   .author-img {
     border-radius: 50%;
     width: 50px;
@@ -22,5 +35,8 @@
   }
   .author {
     font-weight: 500;
+  }
+  &:hover {
+    background-color: var(--bg-lighter-10);
   }
 }

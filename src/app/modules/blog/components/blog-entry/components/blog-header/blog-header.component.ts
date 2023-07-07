@@ -11,4 +11,22 @@ export class BlogHeaderComponent {
   @Input() title = '';
   @Input() date!: Date;
   @Input() author!: User;
+  @Input() isSaved = false;
+  @Input() isLiked = false;
+  @Input() likes = 25;
+  saveEntry() {
+    this.isSaved = !this.isSaved;
+  }
+  likeEntry() {
+    if (!this.isLiked) {
+      this.likes++;
+      this.isLiked = true;
+    } else {
+      this.likes--;
+      this.isLiked = false;
+    }
+  }
+  shareEntry() {
+    console.log('SHARED');
+  }
 }

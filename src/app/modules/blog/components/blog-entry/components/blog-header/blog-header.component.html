@@ -1,15 +1,53 @@
 <div class="image-container mb-3" *ngIf="image">
   <img [src]="image" alt="Blog image" />
 </div>
-<div class="d-flex flex-row justify-content-between">
+<div class="d-flex flex-row justify-content-between mt-3">
   <div>
-    <h1 class="mb-0 text-wrap text-break">
-      {{ title }}
-    </h1>
-    <span class="blog-date">{{ date | date }}</span>
+    <div class="d-flex align-items-center gap-2">
+      <h1 class="mb-0 text-wrap text-break">
+        <!-- <mat-icon class="m-0 fs-3 option-icon mt-1" (click)="saveEntry()"
+          >bookmark{{ !isSaved ? "_outline" : "" }}</mat-icon
+        > -->
+        {{ title }}
+      </h1>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span class="blog-date">{{ date | date }}</span>
+      <div class="d-flex align-items-center">
+        <button
+          mat-button
+          class="option-button p-1 d-flex align-items-center"
+          matTooltip="Save"
+          (click)="saveEntry()"
+        >
+          <mat-icon class="m-0 fs-6 option-icon"
+            >bookmark{{ !isSaved ? "_outline" : "" }}</mat-icon
+          >
+        </button>
+        <button
+          mat-button
+          class="option-button p-1 d-flex align-items-center"
+          matTooltip="Share"
+          (click)="shareEntry()"
+        >
+          <mat-icon class="m-0 fs-6 option-icon">share</mat-icon>
+        </button>
+        <button
+          mat-button
+          class="d-flex align-items-center option-button p-1 gap-1"
+          matTooltip="Like"
+          (click)="likeEntry()"
+        >
+          <mat-icon class="m-0 fs-6 option-icon"
+            >favorite{{ !isLiked ? "_outline" : "" }}</mat-icon
+          >
+          <span class="blog-date">{{ likes }}</span>
+        </button>
+      </div>
+    </div>
   </div>
   <div>
-    <div class="d-flex flex-row align-items-center author-container mt-2">
+    <div class="d-block flex-row align-items-center author-container py-2">
       <img [src]="author.image" alt="Blog author image" class="author-img" />
       <span class="fs-6 ms-2 author text-nowrap">{{ author.name }}</span>
     </div>
