@@ -8,6 +8,7 @@ import { Component, HostListener, Input } from '@angular/core';
 export class BlogScrollerComponent {
   @Input() headings: [string, string][] | undefined;
   @Input() activeHeadingId = '';
+  @Input() title = '';
 
   showScrollUpButton = false;
 
